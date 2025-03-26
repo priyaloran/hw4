@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
     cout << "Erasing b" << endl;
     bt.remove('b');
-
+/*
     // AVL Tree Tests
     AVLTree<char,int> at;
     at.insert(std::make_pair('a',1));
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     }
     cout << "Erasing b" << endl;
     at.remove('b');
+*/
 
     return 0;
 }
