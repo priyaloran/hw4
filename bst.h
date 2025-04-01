@@ -748,19 +748,29 @@ Node<Key, Value>* BinarySearchTree<Key, Value>::internalFind(const Key& key) con
   // First store the node we are using and its parent
   Node<Key, Value>* curr = root_;
 
-  while (curr != NULL)  {
+  if (curr == NULL) {
+    return NULL;
+  }
 
-    // Now traverse using the BST property
-    if (key < curr->getKey())  {
-      // Set it to the left node
-      curr = curr->getLeft();
-    }
-    else if (key > curr->getKey()) {
-      curr = curr->getRight();
-    }
-    else if (key == curr->getKey()) {
-      // Key already exists so return it as is
-      return curr;
+  if (root_->getKey() == key) {
+    return root_;
+  }
+  else  {
+
+    while (curr != NULL)  {
+
+      // Now traverse using the BST property
+      if (key < curr->getKey())  {
+        // Set it to the left node
+        curr = curr->getLeft();
+      }
+      else if (key > curr->getKey()) {
+        curr = curr->getRight();
+      }
+      else if (key == curr->getKey()) {
+        // Key already exists so return it as is
+        return curr;
+      }
     }
   }
   
